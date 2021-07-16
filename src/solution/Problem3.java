@@ -30,6 +30,7 @@ public class Problem3 extends ArrayList {
         for (int i = 0;i < s.length();i++){
             if(characters.contains(s.charAt(i))){
                 //removeRange是protect方法，必须是子类，同包，或当前类才可以使用，所以需要继承ArrayList
+                //removeRange删除包括前不包括后，故进行加1操作，进而删除重复元素
                 characters.removeRange(0,characters.indexOf(s.charAt(i))+1);
             }
             characters.add(s.charAt(i));
