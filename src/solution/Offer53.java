@@ -8,14 +8,16 @@ public class Offer53 {
         System.out.println(search(numbers,8));
     }
 /**
- * 应该使用二分查找法减少运行时长
+ *
  * */
     public static int search(int[] nums, int target) {
-        int count = 0;
-        BinarySearch();
-        return count;
+        int x = 0;
+        for (int i = 0; i < nums.length && nums[i] <= target; i++) {
+            if (nums[i] == target){
+                x++;
+            }
+        }
+        return x;
     }
 
-    private static void BinarySearch() {
-    }
 }
