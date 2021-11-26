@@ -30,17 +30,16 @@ public class Problem700 {
 
     }
 
+    /**
+     * 二叉搜索树的规则是左子树是比根节点小，右子树比根节点大
+     */
     public static  TreeNode searchBST(TreeNode root, int val) {
         if (root != null && root.val != val){
-            TreeNode result1 = searchBST(root.left,val);
-            if (result1 != null){
-                return result1;
+            if (root.val > val){
+                return searchBST(root.left,val);
+            }else {
+                return searchBST(root.right,val);
             }
-            TreeNode result2 = searchBST(root.right,val);
-            if (result2 != null){
-                return result2;
-            }
-            return null;
         }else{
             return root;
         }
